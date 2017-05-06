@@ -1,8 +1,11 @@
 version: '2'
 services:
-  dockerapp:
-    image: jummy/dockerapp
-    ports:
-      - "5000:5000"
-  redis:
-    image: redis:3.2.0
+   dockerapp:
+      extends:
+         file: common.yml
+         service: dockerapp
+      image: jummy/dockerapp
+   redis:
+      extends:
+        file: common.yml
+        service : redis
